@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <style>
+      .wf-force-outline-none[tabindex="-1"]:focus{outline:none;}
+      body {
+        background-image: url("contri.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+      </style>
+      <meta charset="utf-8">
+      <title>contribute</title>
+      <meta content="width=device-width, initial-scale=1" name="viewport">
+      <meta content="Webflow" name="generator">
+      <link href="https://uploads-ssl.webflow.com/625a34e91d8d5e6ee363a56b/css/contribute.webflow.da856581e.css" rel="stylesheet" type="text/css">
+      <link href="https://uploads-ssl.webflow.com/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+      <link href="https://uploads-ssl.webflow.com/img/webclip.png" rel="apple-touch-icon">
+   </head>
+   <script>
+
+      var div  = document.getElementById("location");
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.watchPosition(showPosition);
+        } else {
+          div.innerHTML = "The Browser Does not Support Geolocation";
+        }
+      }
+
+      function showPosition(position) {
+      document.getElementById("Message").innerHTML = "Latitude: " + position.coords.latitude +"   " +"Longitude: " + position.coords.longitude;
+      }
+      getLocation();
+    </script>
+   <body>
+      <h1 style="color:red;text-align:center;"class="heading">Contribution</h1>
+      <section id="contact-form" class="contact-form wf-section">
+         <div class="w-container">
+            <p>These information will be taken as a reference for your contribution</p>
+            <div id="formInstructions" class="small-text"><em>No need to fill the form , only fill the type of Damage road</em></div>
+            <div class="w-form">
+               <form  action="/contri" method="post" aria-label="Wf Form Contact Form"  >
+                  <div class="contact-form-grid">
+                     <div id="w-node-b86195af-1ef0-aee5-d60e-72b54311f3e7-9d63a56c">
+                        <label for="First-Name" id="contact-first-name">First name *</label>
+                        <span><%=Arr[0]%> </span>
+                     </div>
+                     <!-- <div id="w-node-b86195af-1ef0-aee5-d60e-72b54311f3eb-9d63a56c"><label for="Last-Name" id="contact-last-name">Last name *</label><span><%=Arr[1]%> </span></div> -->
+                     <div id="w-node-b86195af-1ef0-aee5-d60e-72b54311f3ef-9d63a56c"><label for="Email" id="contact-email">Email *</label><span><%=Arr[1]%> </span></div>
+                     <div id="w-node-b86195af-1ef0-aee5-d60e-72b54311f3f3-9d63a56c"><label for="Contact-Phone-Number" id="contact-phone">Phone number</label><span><%=Arr[2]%> </span></div>
+                     <!-- <div id="w-node-b86195af-1ef0-aee5-d60e-72b54311f3f3-9d63a56c"><label for="Contact-Phone-Number" id="contact-phone">Fill :- 1 for pothole, 2 for under construction, 3 for flooded road</label><span><%=Arr[2]%> </span></div> -->
+                     <!-- <div id="w-node-b86195af-1ef0-aee5-d60e-72b54311f3f7-9d63a56c"><label  id="typeDefect">Fill :- 1 for pothole, 2 for under construction, 3 for flooded road</label><textarea data-name="Message" maxlength="5000" id="Message" name="typeDefect" placeholder="" class="w-input"></textarea></div> -->
+                     <div id="w-node-b86195af-1ef0-aee5-d60e-72b54311f3f7-9d63a56c">
+                       <label id="contact-message">
+                         Type of Damage Road(Fill as follows) <br> 1 for pothole <br> 2 for under construction <br>3 for flooded road
+                        <textarea maxlength="5000" class="w-input" name="typeDefect">
+
+                        </textarea>
+                       </label>
+                     </div>
+                     <div id="w-node-b86195af-1ef0-aee5-d60e-72b54311f3f7-9d63a56c"><label for="Message" id="contact-message">Coordinates</label><textarea data-name="Message" maxlength="5000" id="Message" name="Message" placeholder="" class="w-input"></textarea></div>
+                  </div>
+                  <button type="submit" >Submit</button>
+               </form>
+         </div>
+      </section>
+   </body>
+</html>
